@@ -9,5 +9,7 @@ public class Main {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         Zoo zoo = (Zoo) context.getBean("zoo");
         zoo.showAnimals();
+
+        context.close();
     }
 }
