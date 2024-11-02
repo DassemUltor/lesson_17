@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="animal.properties"/>
+
+    <bean id="cat" class="com.maxima.homework.Cat">
+        <constructor-arg value="${cat.name}"/>
+        <constructor-arg value="${cat.age}"/>
+    </bean>
+
+    <bean id="dog" class="com.maxima.homework.Dog">
+        <constructor-arg value="${dog.name}"/>
+        <constructor-arg value="${dog.age}"/>
+    </bean>
+
+    <bean id="duck" class="com.maxima.homework.Duck">
+        <constructor-arg value="${duck.name}"/>
+        <constructor-arg value="${duck.age}"/>
+    </bean>
+
+    <bean id="tiger" class="com.maxima.homework.Tiger">
+        <constructor-arg value="${tiger.name}"/>
+        <constructor-arg value="${tiger.age}"/>
+    </bean>
+
+    <bean id="zoo" class="com.maxima.homework.Zoo">
+        <constructor-arg ref="cat"/>
+        <constructor-arg ref="dog"/>
+        <constructor-arg ref="duck"/>
+        <constructor-arg ref="tiger"/>
+    </bean>
+</beans>
